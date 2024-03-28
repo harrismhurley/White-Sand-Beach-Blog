@@ -2,13 +2,13 @@ body{
     margin: 0;
 }
 
-
+.DarkMode * {
+    border-color: white !important;
+}
 /*this is the navbar*/
 .navbar {
     display: flex;
     justify-content: space-between;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
     padding: 10px;
     border-bottom: 3px solid rgb(0, 0, 0);
     height: 50px;
@@ -27,8 +27,6 @@ body{
 /*this is the button*/
 #BackButton{
     font-size: 18px;
-    color: #ffffff;
-    background-color: black;
     margin: 5px;
 }
 
@@ -37,7 +35,7 @@ body{
 }
 
 /* this is the day-night mode image*/
-#DarkLightSelector{
+#DarkToggle{
     height: 30px;
     margin-left: 10px;
     cursor: pointer;
