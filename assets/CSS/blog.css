@@ -10,7 +10,7 @@ body{
     background-color: #ffffff;
     color: rgb(0, 0, 0);
     padding: 10px;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid rgb(0, 0, 0);
     height: 50px;
 }
 
@@ -40,6 +40,7 @@ body{
 #DarkLightSelector{
     height: 30px;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 

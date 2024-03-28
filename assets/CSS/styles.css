@@ -3,18 +3,17 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #ffffff;
-    color: black;
 }
 
+.DarkMode * {
+    border-color: white !important;
+}
 
 /*this is the navbar*/
 .navbar {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
     padding: 10px;
     border-bottom: 3px solid black;
     height: 50px;
@@ -22,9 +21,10 @@ body{
 
 
 /*this is the day-night mode image*/
-#DarkLightSelector{
+#ToggleDark{
     height: 30px;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 
@@ -44,7 +44,7 @@ body{
     flex-grow: 1;
     margin-right: 2px;
     width: 50%;
-    position: relative; /* Position relative to contain absolutely positioned children */
+    position: relative;
 }
 
 /* Container for left content */
@@ -59,7 +59,7 @@ body{
     left: 50%; 
     transform: translateX(-50%);
     margin: 0;
-    color: rgb(247, 93, 250);
+    color: rgb(128, 0, 255);
     font-size: 50px;
 }
 
@@ -89,7 +89,6 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin: 20px;
 }
 
@@ -103,13 +102,9 @@ form{
     justify-content: center;
 }
 
-/* Style for Username input */
-.form-group input#username {
-    width: 100%;
-}
 
-/* Style for Title input */
-.form-group input#Title {
+/* Style for Title and username input */
+.form-group input#Title, .form-group input#username  {
     width: 100%;
 }
 
@@ -126,13 +121,14 @@ textarea{
     border: 2px solid black;
     max-width: 100%;
     max-height: 100%;
-    width: 500px;
+    height: 250px;
+    min-width: 400px;
 }
 
 #Submit{
     width: 100%;
     background-color: black;
-    color: #ffffff;
+    color: white;
 }
 
 #Submit:hover{
