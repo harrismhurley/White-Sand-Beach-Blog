@@ -16,14 +16,39 @@
         <!--bottom boxes with img and form-->
         <div id="BottomBlock">
                 
-            <!--this is the left container-->
+            <!--this is the left container for image-->
             <div id="LeftBlock">
-                    
+                <div class="LeftContent">
+                    <h1 id="LeftHeader">My First Blog</h1>
+                    <img id="LeftImg" src="https://static.vecteezy.com/system/resources/previews/023/792/136/non_2x/evening-on-the-beach-with-palm-trees-an-evening-on-the-beach-with-palm-trees-colorful-picture-for-rest-orange-sunset-in-the-blue-sky-flat-illustration-vector.jpg" alt="beach clip art">      
+                </div>
             </div>
 
-                <!--this is the right container-->
+                <!--this is the right container for form-->
             <div id="RightBlock">
-                <form action=""></form>
+                
+                <!--header for form box-->
+                <h3 id="RightHead">What's on your mind?</h3>
+                
+                <!--this is the form -->
+                <form action="./assets/js/blog.js" method="post">
+                    <div class="form-group">
+                        
+                        <!--username-->
+                        <label for="Username">Username</label>
+                        <input type="text" name="username" id="username" class="username-imput" required>
+                       
+                        <!--title-->
+                        <label for="Title">Title</label>
+                        <input type="text" name="Title" id="Title" class="Title" required>
+                        
+                        <label for="Content">Content</label>
+                        <textarea name="Content" id="Content" cols="20" rows="10"></textarea><br>
+
+                        <!--submit button-->
+                        <input id="Submit" type="submit">
+                    </div>
+                </form>
             </div>
         </div> 
 </body>

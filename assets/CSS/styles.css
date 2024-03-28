@@ -2,13 +2,16 @@ body{
     margin: 0;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: black;
 }
 
 
 /*this is the navbar*/
 .navbar {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
@@ -18,31 +21,120 @@ body{
 }
 
 
-/* this is the day-night mode image*/
+/*this is the day-night mode image*/
 #DarkLightSelector{
     height: 30px;
     margin-left: 10px;
 }
 
 
+/*this is the container for the form and the image*/
 #BottomBlock{
     border-top: 3px solid black;
     margin-top: 2px;
     height: 200px;
     display: flex;
-    flex-direction: row;
+    flex-grow: 1;
 }
 
-#LeftBlock{
+/*this is the left block with the img*/
+#LeftBlock {
     border-right: 3px solid black;
     border-bottom: 3px solid black;
     flex-grow: 1;
     margin-right: 2px;
+    width: 50%;
+    position: relative; /* Position relative to contain absolutely positioned children */
 }
 
-#RightBlock{
+/* Container for left content */
+.left-content {
+    position: relative;
+}
+
+/* Header for left content */
+#LeftHeader {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translateX(-50%);
+    margin: 0;
+    color: rgb(247, 93, 250);
+    font-size: 50px;
+}
+
+/* Image for left content */
+#LeftImg {
+    width: 100%;
+    display: block;
+}
+
+
+/*this is the right block with the form*/
+#RightBlock {
     border-left: 3px solid black;
     border-bottom: 3px solid black;
     flex-grow: 1;
     margin-left: 2px;
+    padding: 20px;
+    width: 50%;
+    overflow: auto;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#RightHead{
+    text-align: center;
+    font-size: 40px;
+}
+/*this is where the form begins*/
+.form-group {
+    margin-bottom: 10px; 
+    justify-content: center;
+}
+
+/* Style for Username input */
+.form-group input#username {
+    width: 100%;
+}
+
+/* Style for Title input */
+.form-group input#Title {
+    width: 100%;
+}
+
+label {
+    display: block; 
+    font-size: 20px;
+}
+
+input{
+    border: 2px solid black;
+}
+
+textarea{
+    border: 2px solid black;
+    max-width: 100%;
+    max-height: 100%;
+    width: 500px;
+}
+
+#Submit{
+    width: 100%;
+    background-color: black;
+    color: #ffffff;
+}
+
+#Submit:hover{
+    background-color: rgb(92, 92, 92);
 }
