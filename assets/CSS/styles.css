@@ -71,7 +71,7 @@ body{
 
 
 /*this is the right block with the form*/
-#RightBlock {
+#formContainer{
     border-left: 3px solid black;
     border-bottom: 3px solid black;
     flex-grow: 1;

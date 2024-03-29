@@ -7,70 +7,32 @@
     <link rel="stylesheet" href="./assets/CSS/blog.css">
 </head>
 <body>
-    <div id="card">
-       
-        <!--navbar-->
-        <div class="navbar">
-           
-            <!--header for the nav-->
-            <div class="header">
-                <h2>White Sand Beach Blog</h2>
-            </div>
-            <div class="actions">
-                
-                <!--this is the back button-->
-                <a href="./index.html">  
-                    <button id="BackButton">⬅️Back</button>
-                </a>  
-
-                <!--this is the dark light selector-->
-                <img id="DarkToggle" src="https://i.pinimg.com/564x/0d/e9/75/0de97592a7392dcabcb6984e4c120e69.jpg" alt="Image">
-            </div>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="header">
+            <h2>White Sand Beach Blog</h2>
         </div>
-
-
-        <!--this is the container for blog posts-->
-        <div id="content">
-            
-            <!--box containing blog post-->
-            <container class="BlogPost">
-                <h4 class="BlogTitle">Blog Title</h4>
-                <p class="BlogText">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                <p class="BlogFooter">Posted by: Harris Hurley</p>
-            </container>
-            <!--box containing blog post-->
-            <container class="BlogPost">
-                <h4 class="BlogTitle">Blog Title</h4>
-                <p class="BlogText">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                <p class="BlogFooter">Posted by: Harris Hurley</p>
-            </container>
-            <!--box containing blog post-->
-            <container class="BlogPost">
-                <h4 class="BlogTitle">Blog Title</h4>
-                <p class="BlogText">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                <p class="BlogFooter">Posted by: Harris Hurley</p>
-            </container>
-            <!--box containing blog post-->
-            <container class="BlogPost">
-                <h4 class="BlogTitle">Blog Title</h4>
-                <p class="BlogText">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                <p class="BlogFooter">Posted by: Harris Hurley</p>
-            </container>
-            <!--box containing blog post-->
-            <container class="BlogPost">
-                <h4 class="BlogTitle">Blog Title</h4>
-                <p class="BlogText">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                <p class="BlogFooter">Posted by: Harris Hurley</p>
-            </container>
-        </div>
-
-        <!--this is the footer-->
-        <div id="footer">
-            <h5>Made with 🫘 by Harris Hurley</h5>
-            <p class="FooterText"><b>Portfolio:</b> Harris Hurley</p>
-            <p class="FooterText"><b>Blog:</b> Full-Stack Blog</p>
+        <div class="actions">
+            <a href="./index.html">  
+                <button id="BackButton">⬅️Back</button>
+            </a>  
+            <img id="DarkToggle" src="https://i.pinimg.com/564x/0d/e9/75/0de97592a7392dcabcb6984e4c120e69.jpg" alt="Dark Mode">
         </div>
     </div>
+
+    <!-- Container for blog posts -->
+    <div id="content">
+        <!-- Blog posts will be dynamically added here -->
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <h5>Made with 🫘 by Harris Hurley</h5>
+        <p class="FooterText"><b>Portfolio:</b><a id="footerLink" href="https://github.com/harrismhurley">Harris Hurley</a></p>
+        <p class="FooterText"><b>Blog:</b> Full-Stack Blog</p>
+    </div>
+
+    <!-- JavaScript -->
     <script src="./assets/js/blog.js"></script>
 </body>
 </html>
