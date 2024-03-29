@@ -42,3 +42,55 @@ toggle.addEventListener('click', function () {
     }
 });
 //Dark Mode toggle end
+
+//Local Storage
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    const blogContainer = document.getElementById('content');
+
+    if (form && blogContainer) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            const formDataObject = {};
+            formData.forEach((value, key) => {
+                formDataObject[key] = value;
+            });
+
+            const blogPost = createBlogPost(formDataObject);
+            blogContainer.appendChild(blogPost);
+
+            // Store the form data in local storage
+            localStorage.setItem('submittedData', JSON.stringify(formDataObject));
+
+            // Redirect user to submitted.html
+            window.location.href = 'submitted.html';
+        });
+    } else {
+        console.error('Form or blog container not found.');
+    }
+
+    function createBlogPost(data) {
+        const blogPost = document.createElement('div');
+        blogPost.classList.add('BlogPost');
+
+        const title = document.createElement('h4');
+        title.textContent = data.Title;
+        title.classList.add('BlogTitle');
+        blogPost.appendChild(title);
+
+        const content = document.createElement('p');
+        content.textContent = data.Content;
+        content.classList.add('BlogText');
+        blogPost.appendChild(content);
+
+        const footer = document.createElement('p');
+        footer.textContent = `Posted by: ${data.Username}`;
+        footer.classList.add('BlogFooter');
+        blogPost.appendChild(footer);
+
+        return blogPost;
+    }
+});
+
