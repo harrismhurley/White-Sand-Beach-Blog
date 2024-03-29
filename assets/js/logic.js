@@ -14,6 +14,7 @@ toggle.addEventListener('click', function () {
         const allElementsWithBorder = document.querySelectorAll('*');
         allElementsWithBorder.forEach(element => {
             element.style.borderColor = 'white';
+        
         });
     } else{
         //Reverts back to default light mode
@@ -30,25 +31,23 @@ toggle.addEventListener('click', function () {
 //end of the ToggleDark
 
 //Start of the Form
-const form = document.querySelector('form');
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('blogForm');
 
-// Add submit event listener to the form
-form.addEventListener('submit', function(event) {
-    // Prevent the default form submission behavior
-    event.preventDefault();
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
 
-    // Get form data
-    const formData = new FormData(form);
+        const formData = new FormData(form);
+        const formDataObject = {};
+        formData.forEach((value, key) => {
+            formDataObject[key] = value;
+        });
 
-    // Convert FormData to object
-    const formDataObject = {};
-    formData.forEach((value, key) => {
-        formDataObject[key] = value;
+        const storedPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+        storedPosts.push(formDataObject);
+
+        localStorage.setItem('blogPosts', JSON.stringify(storedPosts));
+
+        window.location.href = 'blog.html'; // Redirect to blog page
     });
-
-    // Store the form data in local storage
-    localStorage.setItem('submittedData', JSON.stringify(formDataObject));
-
-    // Redirect user to submitted.html
-    window.location.href = 'blog.html';
 });

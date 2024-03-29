@@ -43,54 +43,36 @@ toggle.addEventListener('click', function () {
 });
 //Dark Mode toggle end
 
-//Local Storage
+//retrieve stored data and produce a BlogPost
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form');
-    const blogContainer = document.getElementById('content');
+    const storedPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+    const contentDiv = document.getElementById('content');
 
-    if (form && blogContainer) {
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
+    // Reverse the order of stored posts
+    storedPosts.reverse();
 
-            const formData = new FormData(form);
-            const formDataObject = {};
-            formData.forEach((value, key) => {
-                formDataObject[key] = value;
-            });
+    storedPosts.forEach(post => {
+        const blogPostContainer = document.createElement('container');
+        blogPostContainer.classList.add('BlogPost');
 
-            const blogPost = createBlogPost(formDataObject);
-            blogContainer.appendChild(blogPost);
+        const titleElement = document.createElement('h4');
+        titleElement.classList.add('BlogTitle');
+        titleElement.textContent = post.Title;
 
-            // Store the form data in local storage
-            localStorage.setItem('submittedData', JSON.stringify(formDataObject));
+        const contentElement = document.createElement('p');
+        contentElement.classList.add('BlogText');
+        contentElement.textContent = post.Content;
 
-            // Redirect user to submitted.html
-            window.location.href = 'submitted.html';
-        });
-    } else {
-        console.error('Form or blog container not found.');
-    }
+        const footerElement = document.createElement('p');
+        footerElement.classList.add('BlogFooter');
+        footerElement.textContent = `Posted by: ${post.Username}`;
 
-    function createBlogPost(data) {
-        const blogPost = document.createElement('div');
-        blogPost.classList.add('BlogPost');
+        blogPostContainer.appendChild(titleElement);
+        blogPostContainer.appendChild(contentElement);
+        blogPostContainer.appendChild(footerElement);
 
-        const title = document.createElement('h4');
-        title.textContent = data.Title;
-        title.classList.add('BlogTitle');
-        blogPost.appendChild(title);
-
-        const content = document.createElement('p');
-        content.textContent = data.Content;
-        content.classList.add('BlogText');
-        blogPost.appendChild(content);
-
-        const footer = document.createElement('p');
-        footer.textContent = `Posted by: ${data.Username}`;
-        footer.classList.add('BlogFooter');
-        blogPost.appendChild(footer);
-
-        return blogPost;
-    }
+        contentDiv.appendChild(blogPostContainer);
+    });
 });
+
 
