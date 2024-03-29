@@ -14,6 +14,7 @@ Welcome to our vibrant community of bloggers and readers! The White Sand Beach B
 - [License](#license)
 - [Features](#features)
 - [Pages](#pages)
+
 ## Installation
 
 N/A
